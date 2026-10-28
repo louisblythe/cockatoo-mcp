@@ -29,7 +29,7 @@ Status checked 28 October 2026. **No paid placements purchased.** A submission r
 
 | Directory | Concrete reason |
 | --- | --- |
-| LobeHub | Google sign-in stalled. Email sign-up reaches a new-password form; account owner must complete credential creation. Manifest is prepared in `lhm.plugin.json`. |
+| LobeHub | Account created and publishing CLI authenticated. GitHub ownership connection requests public/private repository access, workflow updates, read/write gists, and read-only profile/email/organisation data. Awaiting explicit owner approval of these broader permissions. Manifest is prepared in `lhm.plugin.json`. |
 | Smithery | Free endpoint registration reached connection settings, then HTTP 403: “Updating servers has been removed. Contact support@smithery.ai.” No confirmed listing. |
 | MCP Atlas | Submission action goes to a missing Formspree form (`xformid`). No submission accepted. |
 | Developers Digest | No working intake found; advertised repository returned 404. |
