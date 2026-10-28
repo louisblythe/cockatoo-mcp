@@ -1,0 +1,21 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.louisblythe/cockatoo",
+  "title": "Cockatoo",
+  "description": "Create, edit and publish hosted business websites with owner-approved access.",
+  "version": "1.0.0",
+  "websiteUrl": "https://cockatoo.com.au/agents/",
+  "icons": [
+    {
+      "src": "https://cockatoo.com.au/android-chrome-512x512.png",
+      "mimeType": "image/png",
+      "sizes": ["512x512"]
+    }
+  ],
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://app.cockatoo.com.au/mcp"
+    }
+  ]
+}
