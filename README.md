@@ -61,3 +61,9 @@ A free plan is available. Paid upgrades and domain services are managed directly
 Official MCP Registry name: `io.github.louisblythe/cockatoo`. The remote-only listing is described in [`server.json`](server.json).
 
 This repository contains public connection documentation and listing metadata. The hosted Cockatoo service is maintained separately; its implementation is not distributed by this repository. The MIT license applies to the files in this repository, not to the hosted service.
+
+## Verify the public endpoint
+
+With Node.js 22 or later, run `npm run verify`. No dependencies or account are required. The check performs initialize, tool discovery, catalogue read, OAuth discovery and an unauthenticated website read that must receive HTTP 401. It never creates or publishes a website.
+
+To additionally verify a permitted site read, set `COCKATOO_MCP_TOKEN` privately in your environment. The script does not print credentials or website content. Revoke any temporary test connection afterward.

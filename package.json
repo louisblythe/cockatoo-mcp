@@ -1,0 +1,15 @@
+{
+  "name": "cockatoo-mcp-connection-docs",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Create, edit and publish hosted business websites with owner-approved access.",
+  "homepage": "https://cockatoo.com.au/agents/",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/louisblythe/cockatoo-mcp.git"
+  },
+  "scripts": {
+    "verify": "node scripts/verify.mjs"
+  }
+}

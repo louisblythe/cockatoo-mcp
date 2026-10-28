@@ -1,0 +1,1278 @@
+{
+  "author": "louisblythe",
+  "authorUrl": "https://github.com/louisblythe",
+  "cloudEndpoint": "https://app.cockatoo.com.au/mcp",
+  "description": "Create, edit and publish hosted business websites with owner-approved access.",
+  "homepage": "https://cockatoo.com.au/agents/",
+  "identifier": "louisblythe-cockatoo-mcp",
+  "name": "Cockatoo",
+  "prompts": [],
+  "resources": [],
+  "tools": [
+    {
+      "name": "catalog",
+      "description": "Start here to build a website. Returns templates, industries, style presets and a complete starter document to fill in.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "$schema": "https://json-schema.org/draft/2020-12/schema"
+      },
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "start_onboarding",
+      "description": "Create the user's website. Saves the document as a private draft and returns an approvalUrl; give that link to the user, who signs in with this email and approves to publish. No account or email verification is needed on your side, and no email is sent.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string",
+            "format": "email",
+            "pattern": "^(?:[A-Za-z0-9_'+\\-]+\\.)*[A-Za-z0-9_'+\\-]*[A-Za-z0-9_+-]@(?:[A-Za-z0-9][A-Za-z0-9\\-]*\\.)+[A-Za-z]{2,}$"
+          },
+          "agentName": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 80
+          },
+          "document": {
+            "type": "object",
+            "properties": {
+              "version": {
+                "type": "number",
+                "const": 1
+              },
+              "template": {
+                "type": "string"
+              },
+              "industry": {
+                "type": "string"
+              },
+              "businessName": {
+                "type": "string"
+              },
+              "headline": {
+                "type": "string"
+              },
+              "introduction": {
+                "type": "string"
+              },
+              "about": {
+                "type": "string"
+              },
+              "services": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "phone": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string"
+              },
+              "bookingUrl": {
+                "type": "string"
+              },
+              "hours": {
+                "type": "string"
+              },
+              "serviceArea": {
+                "type": "string"
+              },
+              "colour": {
+                "type": "string"
+              },
+              "font": {
+                "type": "string"
+              },
+              "title": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "logo": {
+                "anyOf": [
+                  {
+                    "type": "object",
+                    "properties": {
+                      "assetId": {
+                        "type": "string"
+                      },
+                      "alt": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "assetId",
+                      "alt"
+                    ]
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "gallery": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "assetId": {
+                      "type": "string"
+                    },
+                    "alt": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "assetId",
+                    "alt"
+                  ]
+                }
+              },
+              "sections": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "visible": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "visible"
+                  ]
+                }
+              },
+              "blockLayout": {},
+              "layout": {},
+              "pages": {
+                "minItems": 1,
+                "maxItems": 100,
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "blockPageId": {
+                      "type": "string"
+                    },
+                    "id": {
+                      "type": "string",
+                      "pattern": "^[a-zA-Z0-9-]{1,64}$"
+                    },
+                    "title": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 120
+                    },
+                    "slug": {
+                      "type": "string",
+                      "maxLength": 63
+                    },
+                    "isHome": {
+                      "type": "boolean"
+                    },
+                    "showInNav": {
+                      "type": "boolean"
+                    },
+                    "status": {
+                      "type": "string",
+                      "enum": [
+                        "published",
+                        "draft"
+                      ]
+                    },
+                    "seo": {
+                      "type": "object",
+                      "properties": {
+                        "title": {
+                          "type": "string",
+                          "maxLength": 160
+                        },
+                        "description": {
+                          "type": "string",
+                          "maxLength": 320
+                        },
+                        "noindex": {
+                          "type": "boolean"
+                        },
+                        "image": {
+                          "anyOf": [
+                            {
+                              "type": "object",
+                              "properties": {
+                                "assetId": {
+                                  "type": "string"
+                                },
+                                "alt": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "assetId",
+                                "alt"
+                              ]
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        }
+                      },
+                      "required": [
+                        "title",
+                        "description",
+                        "noindex",
+                        "image"
+                      ]
+                    },
+                    "sections": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "visible": {
+                            "type": "boolean"
+                          }
+                        },
+                        "required": [
+                          "id",
+                          "visible"
+                        ]
+                      }
+                    },
+                    "content": {
+                      "type": "object",
+                      "properties": {
+                        "headline": {
+                          "type": "string"
+                        },
+                        "introduction": {
+                          "type": "string"
+                        },
+                        "about": {
+                          "type": "string"
+                        },
+                        "services": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        },
+                        "gallery": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "assetId": {
+                                "type": "string"
+                              },
+                              "alt": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "assetId",
+                              "alt"
+                            ]
+                          }
+                        }
+                      },
+                      "required": [
+                        "headline",
+                        "introduction",
+                        "about",
+                        "services",
+                        "gallery"
+                      ]
+                    },
+                    "layout": {}
+                  },
+                  "required": [
+                    "id",
+                    "title",
+                    "slug",
+                    "isHome",
+                    "showInNav",
+                    "status",
+                    "seo",
+                    "sections",
+                    "content"
+                  ]
+                }
+              },
+              "redirects": {
+                "type": "object",
+                "propertyNames": {
+                  "type": "string"
+                },
+                "additionalProperties": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "version",
+              "template",
+              "industry",
+              "businessName",
+              "headline",
+              "introduction",
+              "about",
+              "services",
+              "phone",
+              "email",
+              "bookingUrl",
+              "hours",
+              "serviceArea",
+              "colour",
+              "font",
+              "title",
+              "description",
+              "logo",
+              "gallery",
+              "sections"
+            ],
+            "additionalProperties": false
+          },
+          "idempotencyKey": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9_-]{8,128}$",
+            "description": "Unique random key for this operation; reuse exactly when retrying"
+          }
+        },
+        "required": [
+          "email",
+          "agentName",
+          "document",
+          "idempotencyKey"
+        ],
+        "$schema": "https://json-schema.org/draft/2020-12/schema"
+      },
+      "annotations": {
+        "readOnlyHint": false,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "onboarding_status",
+      "description": "Read onboarding status using the private continuation credential.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+          },
+          "continuationCredential": {
+            "type": "string",
+            "minLength": 64,
+            "maxLength": 64
+          }
+        },
+        "required": [
+          "id",
+          "continuationCredential"
+        ],
+        "$schema": "https://json-schema.org/draft/2020-12/schema"
+      },
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "exchange_onboarding",
+      "description": "After owner approval, exchange the private continuation credential for an API token. Keep returned credentials private.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+          },
+          "continuationCredential": {
+            "type": "string",
+            "minLength": 64,
+            "maxLength": 64
+          },
+          "idempotencyKey": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9_-]{8,128}$",
+            "description": "Unique random key for this operation; reuse exactly when retrying"
+          }
+        },
+        "required": [
+          "id",
+          "continuationCredential",
+          "idempotencyKey"
+        ],
+        "$schema": "https://json-schema.org/draft/2020-12/schema"
+      },
+      "annotations": {
+        "readOnlyHint": false,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "get_site",
+      "description": "Read the owner’s site and current revision. State is draft or live.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "$schema": "https://json-schema.org/draft/2020-12/schema"
+      },
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "create_site",
+      "description": "Create one structured draft. Does not publish. Fails if the owner already has a site.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "document": {
+            "type": "object",
+            "properties": {
+              "version": {
+                "type": "number",
+                "const": 1
+              },
+              "template": {
+                "type": "string"
+              },
+              "industry": {
+                "type": "string"
+              },
+              "businessName": {
+                "type": "string"
+              },
+              "headline": {
+                "type": "string"
+              },
+              "introduction": {
+                "type": "string"
+              },
+              "about": {
+                "type": "string"
+              },
+              "services": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "phone": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string"
+              },
+              "bookingUrl": {
+                "type": "string"
+              },
+              "hours": {
+                "type": "string"
+              },
+              "serviceArea": {
+                "type": "string"
+              },
+              "colour": {
+                "type": "string"
+              },
+              "font": {
+                "type": "string"
+              },
+              "title": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "logo": {
+                "anyOf": [
+                  {
+                    "type": "object",
+                    "properties": {
+                      "assetId": {
+                        "type": "string"
+                      },
+                      "alt": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "assetId",
+                      "alt"
+                    ]
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "gallery": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "assetId": {
+                      "type": "string"
+                    },
+                    "alt": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "assetId",
+                    "alt"
+                  ]
+                }
+              },
+              "sections": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "visible": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "visible"
+                  ]
+                }
+              },
+              "blockLayout": {},
+              "layout": {},
+              "pages": {
+                "minItems": 1,
+                "maxItems": 100,
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "blockPageId": {
+                      "type": "string"
+                    },
+                    "id": {
+                      "type": "string",
+                      "pattern": "^[a-zA-Z0-9-]{1,64}$"
+                    },
+                    "title": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 120
+                    },
+                    "slug": {
+                      "type": "string",
+                      "maxLength": 63
+                    },
+                    "isHome": {
+                      "type": "boolean"
+                    },
+                    "showInNav": {
+                      "type": "boolean"
+                    },
+                    "status": {
+                      "type": "string",
+                      "enum": [
+                        "published",
+                        "draft"
+                      ]
+                    },
+                    "seo": {
+                      "type": "object",
+                      "properties": {
+                        "title": {
+                          "type": "string",
+                          "maxLength": 160
+                        },
+                        "description": {
+                          "type": "string",
+                          "maxLength": 320
+                        },
+                        "noindex": {
+                          "type": "boolean"
+                        },
+                        "image": {
+                          "anyOf": [
+                            {
+                              "type": "object",
+                              "properties": {
+                                "assetId": {
+                                  "type": "string"
+                                },
+                                "alt": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "assetId",
+                                "alt"
+                              ]
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        }
+                      },
+                      "required": [
+                        "title",
+                        "description",
+                        "noindex",
+                        "image"
+                      ]
+                    },
+                    "sections": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "visible": {
+                            "type": "boolean"
+                          }
+                        },
+                        "required": [
+                          "id",
+                          "visible"
+                        ]
+                      }
+                    },
+                    "content": {
+                      "type": "object",
+                      "properties": {
+                        "headline": {
+                          "type": "string"
+                        },
+                        "introduction": {
+                          "type": "string"
+                        },
+                        "about": {
+                          "type": "string"
+                        },
+                        "services": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        },
+                        "gallery": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "assetId": {
+                                "type": "string"
+                              },
+                              "alt": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "assetId",
+                              "alt"
+                            ]
+                          }
+                        }
+                      },
+                      "required": [
+                        "headline",
+                        "introduction",
+                        "about",
+                        "services",
+                        "gallery"
+                      ]
+                    },
+                    "layout": {}
+                  },
+                  "required": [
+                    "id",
+                    "title",
+                    "slug",
+                    "isHome",
+                    "showInNav",
+                    "status",
+                    "seo",
+                    "sections",
+                    "content"
+                  ]
+                }
+              },
+              "redirects": {
+                "type": "object",
+                "propertyNames": {
+                  "type": "string"
+                },
+                "additionalProperties": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "version",
+              "template",
+              "industry",
+              "businessName",
+              "headline",
+              "introduction",
+              "about",
+              "services",
+              "phone",
+              "email",
+              "bookingUrl",
+              "hours",
+              "serviceArea",
+              "colour",
+              "font",
+              "title",
+              "description",
+              "logo",
+              "gallery",
+              "sections"
+            ],
+            "additionalProperties": false
+          },
+          "idempotencyKey": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9_-]{8,128}$",
+            "description": "Unique random key for this operation; reuse exactly when retrying"
+          }
+        },
+        "required": [
+          "document",
+          "idempotencyKey"
+        ],
+        "$schema": "https://json-schema.org/draft/2020-12/schema"
+      },
+      "annotations": {
+        "readOnlyHint": false,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "save_site",
+      "description": "Replace the draft using the current revision. Does not change the live publication.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "document": {
+            "type": "object",
+            "properties": {
+              "version": {
+                "type": "number",
+                "const": 1
+              },
+              "template": {
+                "type": "string"
+              },
+              "industry": {
+                "type": "string"
+              },
+              "businessName": {
+                "type": "string"
+              },
+              "headline": {
+                "type": "string"
+              },
+              "introduction": {
+                "type": "string"
+              },
+              "about": {
+                "type": "string"
+              },
+              "services": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "phone": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string"
+              },
+              "bookingUrl": {
+                "type": "string"
+              },
+              "hours": {
+                "type": "string"
+              },
+              "serviceArea": {
+                "type": "string"
+              },
+              "colour": {
+                "type": "string"
+              },
+              "font": {
+                "type": "string"
+              },
+              "title": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "logo": {
+                "anyOf": [
+                  {
+                    "type": "object",
+                    "properties": {
+                      "assetId": {
+                        "type": "string"
+                      },
+                      "alt": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "assetId",
+                      "alt"
+                    ]
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "gallery": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "assetId": {
+                      "type": "string"
+                    },
+                    "alt": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "assetId",
+                    "alt"
+                  ]
+                }
+              },
+              "sections": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "visible": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "visible"
+                  ]
+                }
+              },
+              "blockLayout": {},
+              "layout": {},
+              "pages": {
+                "minItems": 1,
+                "maxItems": 100,
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "blockPageId": {
+                      "type": "string"
+                    },
+                    "id": {
+                      "type": "string",
+                      "pattern": "^[a-zA-Z0-9-]{1,64}$"
+                    },
+                    "title": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 120
+                    },
+                    "slug": {
+                      "type": "string",
+                      "maxLength": 63
+                    },
+                    "isHome": {
+                      "type": "boolean"
+                    },
+                    "showInNav": {
+                      "type": "boolean"
+                    },
+                    "status": {
+                      "type": "string",
+                      "enum": [
+                        "published",
+                        "draft"
+                      ]
+                    },
+                    "seo": {
+                      "type": "object",
+                      "properties": {
+                        "title": {
+                          "type": "string",
+                          "maxLength": 160
+                        },
+                        "description": {
+                          "type": "string",
+                          "maxLength": 320
+                        },
+                        "noindex": {
+                          "type": "boolean"
+                        },
+                        "image": {
+                          "anyOf": [
+                            {
+                              "type": "object",
+                              "properties": {
+                                "assetId": {
+                                  "type": "string"
+                                },
+                                "alt": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "assetId",
+                                "alt"
+                              ]
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        }
+                      },
+                      "required": [
+                        "title",
+                        "description",
+                        "noindex",
+                        "image"
+                      ]
+                    },
+                    "sections": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "visible": {
+                            "type": "boolean"
+                          }
+                        },
+                        "required": [
+                          "id",
+                          "visible"
+                        ]
+                      }
+                    },
+                    "content": {
+                      "type": "object",
+                      "properties": {
+                        "headline": {
+                          "type": "string"
+                        },
+                        "introduction": {
+                          "type": "string"
+                        },
+                        "about": {
+                          "type": "string"
+                        },
+                        "services": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        },
+                        "gallery": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "assetId": {
+                                "type": "string"
+                              },
+                              "alt": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "assetId",
+                              "alt"
+                            ]
+                          }
+                        }
+                      },
+                      "required": [
+                        "headline",
+                        "introduction",
+                        "about",
+                        "services",
+                        "gallery"
+                      ]
+                    },
+                    "layout": {}
+                  },
+                  "required": [
+                    "id",
+                    "title",
+                    "slug",
+                    "isHome",
+                    "showInNav",
+                    "status",
+                    "seo",
+                    "sections",
+                    "content"
+                  ]
+                }
+              },
+              "redirects": {
+                "type": "object",
+                "propertyNames": {
+                  "type": "string"
+                },
+                "additionalProperties": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "version",
+              "template",
+              "industry",
+              "businessName",
+              "headline",
+              "introduction",
+              "about",
+              "services",
+              "phone",
+              "email",
+              "bookingUrl",
+              "hours",
+              "serviceArea",
+              "colour",
+              "font",
+              "title",
+              "description",
+              "logo",
+              "gallery",
+              "sections"
+            ],
+            "additionalProperties": false
+          },
+          "revision": {
+            "type": "integer",
+            "exclusiveMinimum": 0,
+            "maximum": 9007199254740991
+          },
+          "idempotencyKey": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9_-]{8,128}$",
+            "description": "Unique random key for this operation; reuse exactly when retrying"
+          }
+        },
+        "required": [
+          "document",
+          "revision",
+          "idempotencyKey"
+        ],
+        "$schema": "https://json-schema.org/draft/2020-12/schema"
+      },
+      "annotations": {
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "list_images",
+      "description": "List retained uploaded images owned by this site.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "$schema": "https://json-schema.org/draft/2020-12/schema"
+      },
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "upload_image",
+      "description": "Upload a JPEG, PNG or WebP image (5 MiB maximum). Returns an assetId for the document.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "base64": {
+            "type": "string",
+            "maxLength": 6990508
+          },
+          "mime": {
+            "type": "string",
+            "enum": [
+              "image/jpeg",
+              "image/png",
+              "image/webp"
+            ]
+          },
+          "idempotencyKey": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9_-]{8,128}$",
+            "description": "Unique random key for this operation; reuse exactly when retrying"
+          }
+        },
+        "required": [
+          "base64",
+          "mime",
+          "idempotencyKey"
+        ],
+        "$schema": "https://json-schema.org/draft/2020-12/schema"
+      },
+      "annotations": {
+        "readOnlyHint": false,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "preview_site",
+      "description": "Return private draft preview HTML, with enquiry submission disabled.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "$schema": "https://json-schema.org/draft/2020-12/schema"
+      },
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "publication_status",
+      "description": "Read publication state and published revision.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "$schema": "https://json-schema.org/draft/2020-12/schema"
+      },
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "publish_site",
+      "description": "Publish the saved revision to a public hosted address. Requires sites:publish.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "revision": {
+            "type": "integer",
+            "exclusiveMinimum": 0,
+            "maximum": 9007199254740991
+          },
+          "slug": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9-]{2,62}$"
+          },
+          "idempotencyKey": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9_-]{8,128}$",
+            "description": "Unique random key for this operation; reuse exactly when retrying"
+          }
+        },
+        "required": [
+          "revision",
+          "idempotencyKey"
+        ],
+        "$schema": "https://json-schema.org/draft/2020-12/schema"
+      },
+      "annotations": {
+        "readOnlyHint": false,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": true
+      }
+    },
+    {
+      "name": "unpublish_site",
+      "description": "Remove the current public publication. Draft and enquiries are retained.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "revision": {
+            "type": "integer",
+            "exclusiveMinimum": 0,
+            "maximum": 9007199254740991
+          },
+          "idempotencyKey": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9_-]{8,128}$",
+            "description": "Unique random key for this operation; reuse exactly when retrying"
+          }
+        },
+        "required": [
+          "revision",
+          "idempotencyKey"
+        ],
+        "$schema": "https://json-schema.org/draft/2020-12/schema"
+      },
+      "annotations": {
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    }
+  ],
+  "version": "1.0.0"
+}
