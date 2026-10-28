@@ -67,3 +67,7 @@ This repository contains public connection documentation and listing metadata. T
 With Node.js 22 or later, run `npm run verify`. No dependencies or account are required. The check performs initialize, tool discovery, catalogue read, OAuth discovery and an unauthenticated website read that must receive HTTP 401. It never creates or publishes a website.
 
 To additionally verify a permitted site read, set `COCKATOO_MCP_TOKEN` privately in your environment. The script does not print credentials or website content. Revoke any temporary test connection afterward.
+
+## Directory launch status
+
+See [submission receipts, review status, and readiness evidence](SUBMISSIONS.md).
