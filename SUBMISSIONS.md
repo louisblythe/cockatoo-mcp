@@ -1,6 +1,6 @@
 # Cockatoo MCP directory submissions
 
-Status audited 30 October 2026. **25 distinct submission destinations: 18 previously recorded plus 7 accepted submissions/review requests on 30 October.** **No paid placements purchased.** A submission receipt is not an approved public listing.
+Status audited 30 October 2026. **28 distinct submission destinations: 18 previously recorded plus 10 accepted submissions/review requests on 30 October.** **No paid placements purchased.** A submission receipt is not an approved public listing.
 
 ## Submitted
 
@@ -18,37 +18,43 @@ Status audited 30 October 2026. **25 distinct submission destinations: 18 previo
 | [MCP.Directory](https://mcp.directory/) | Submission confirmed; advertised review/publication within 24 hours. |
 | [MCP Server Space](https://mcpserver.space/) | Submission received; review pending. |
 | [AIBase](https://mcp.aibase.com/submit) | Submission confirmed: “Submitted, we’ll process it ASAP.” Await editorial review. |
-| [Glama](https://glama.ai/mcp/connectors) | Hosted connector submitted for review. Await review email and any required health checks. |
+| [Glama](https://glama.ai/mcp/connectors/io.github.louisblythe/cockatoo) | Live public connector, healthy at its displayed last test; connector badge resolves. Historical 13-tool score snapshot lags the current 20-tool endpoint. |
 | [Docker MCP Catalog](https://github.com/docker/mcp-registry/pull/6223) | Pull request open; catalog validator passed. Docker Desktop end-to-end integration not exercised because local Docker daemon was not running. |
 | [mcpHQ awesome-mcp-servers](https://github.com/mcpHQ/awesome-mcp-servers/pull/483) | Merged, confirmed 30 October 2026. |
 | [ToolSDK Registry](https://github.com/toolsdk-ai/toolsdk-mcp-registry/pull/1088) | Pull request open; package validation and CI schema/Biome checks passed. |
 | [TensorBlock awesome-mcp-servers](https://github.com/TensorBlock/awesome-mcp-servers/pull/4768) | Merged, confirmed 30 October 2026. Hosted service and private implementation disclosed. |
 | [best-of-mcp-servers](https://github.com/tolkonepiu/best-of-mcp-servers/issues/597) | Suggestion submitted; maintainers to assess hosted-service fit. |
-
 | [TrackMCP](https://trackmcp.com/submit-mcp) | Submitted 30 October; confirmation: “Your tool has been submitted. We'll review it and email you a confirmation.” Free; public repository and support email supplied. |
 | [MCP Repository](https://mcprepository.com/louisblythe/cockatoo-mcp) | Submitted 30 October; queued for validation and processing. Expected URL shown; not yet verified live. |
 | [Awesome Remote MCP Servers (jaw9c)](https://github.com/jaw9c/awesome-remote-mcp-servers/pull/1817) | PR submitted 30 October; review pending. Official hosted endpoint, OAuth and private implementation disclosed. |
 | [Kilo Marketplace](https://github.com/Kilo-Org/kilo-marketplace/pull/553) | PR submitted 30 October; review pending. Generated catalog, 119 tests and both typechecks passed. No fresh Kilo-specific OAuth acceptance claimed. |
-| [HOL / awesome-ai-plugins](https://github.com/hashgraph-online/awesome-ai-plugins/pull/1052) | PR submitted 30 October; review and centralized source scan pending. 33 generator tests and alphabetical ordering passed. Direct GitHub submission avoided creating another account. |
+| [HOL / awesome-ai-plugins](https://github.com/hashgraph-online/awesome-ai-plugins/pull/1052) | PR submitted 30 October; centralized source scan and contribution gates passed; human review pending. 33 generator tests and alphabetical ordering passed. Direct GitHub submission avoided creating another account. |
 | [mcp.tc](https://mcp.tc/s/fmprDKXU3E25qRnH) | Submitted 30 October; endpoint check completed, waiting for human review. Reserved eventual URL `https://mcp.tc/i/cockatoo` is not live until approved. |
 | [Agenstry](https://agenstry.com/submit) | Submitted 30 October; receipt says “indexed” and endpoint answered handshake with 20 tools. Public search/detail visibility not independently checked. |
+
+| [AllMCPs](https://allmcps.com/mcp/cockatoo) | Submitted 30 October after explicit owner approval of terms. Receipt: “Cockatoo is in the review queue.” No paid upgrades selected; newsletter unchecked. Public publication remains pending. |
+| [GitHub MCP Registry onboarding](https://github.com/github/github-mcp-server/discussions/3623) | Manual onboarding request submitted 30 October. Official registry active/latest checked; GitHub search returned zero listings before request. Private hosted implementation and MIT metadata-only license explicitly disclosed. |
+| [punkpeye awesome-remote-mcp-servers](https://github.com/punkpeye/awesome-remote-mcp-servers/pull/3341) | PR submitted 30 October after Glama connector became available. Required badge resolves; three-line entry in Content Management. Maintainer CI/review pending. |
 
 ## Blocked, waiting, or unsuitable
 
 | Directory | Concrete reason |
 | --- | --- |
-| AllMCPs | Form requires agreement to Terms and a security check; not submitted without action-time approval. |
 | Cline Marketplace | Required attestation that Cline setup has been tested, plus a 400×400 PNG. No fresh Cline acceptance available; not submitted. |
 | ProMCP | Explicitly requires public implementation source; connection-docs-only repository does not fit. |
 | Plug and Ship | Open-source-only submission requirement; hosted implementation is private. |
-| DReview / MCP Hunter | Sign-in required; not submitted in this pass. |
+| [Claude Rules](https://clauderules.net/submit/mcp) | Free community option opens sign-in gate; GitHub or Google. Not submitted. |
+| [DReview](https://dreview.co/login) | Email/password sign-in or account creation required. Not submitted. |
+| [MCP Hunter](https://mcp-hunter.com/submit) | GitHub or Google sign-in required; free weekly spots subject to availability. Not submitted; newsletter left unchecked. |
+| [Stork](https://www.stork.ai/mcp/submit) | Sign-in required. Use header Sign In button → Google; inline `/signin` link currently returns 404. Endpoint/details prepared, but no submission accepted. |
+| [MCP Bundles](https://www.mcpbundles.com/mcp-analysis?intent=publish) | Public endpoint probe discovered 20 tools, 3 resources and OAuth. Publication then requires sign-in and ownership verification. Google/GitHub/Discord/Apple or email/password. Not counted as submitted. |
+| [MCP Find](https://mcpfind.org/submit) | Current contribution rules require public implementation source and published npm/PyPI/Docker package; private hosted service does not fit. |
 | Tulimoa | Free listing requires a persistent badge on the product site; not added in this pass. |
 | LobeHub | Account created and publishing CLI authenticated. GitHub ownership connection requests public/private repository access, workflow updates, read/write gists, and read-only profile/email/organisation data. Awaiting explicit owner approval of these broader permissions. Manifest is prepared in `lhm.plugin.json`. |
 | Smithery | Free endpoint registration reached connection settings, then HTTP 403: “Updating servers has been removed. Contact support@smithery.ai.” No confirmed listing. |
 | MCP Atlas | Submission action goes to a missing Formspree form (`xformid`). No submission accepted. |
 | Developers Digest | No working intake found; advertised repository returned 404. |
 | PulseMCP | Direct submission reported paused by SubmitMCP guide; official registry publication completed, downstream import unconfirmed. |
-| punkpeye/awesome-remote-mcp-servers | Requires an approved Glama connector badge. Wait for Glama identifier, then prepare a valid remote-list PR. |
 | punkpeye/awesome-mcp-servers | Local-installable server list; this repository is connection documentation, not the hosted implementation. Use the remote list instead. |
 | MobinX/awesome-mcp-list | Local-installable implementation requirements do not fit this hosted service. |
 | ToolHive | Requires a public, permissively licensed implementation; Cockatoo's hosted implementation is private. |
@@ -78,3 +84,11 @@ The MIT license in this repository applies to its documentation and metadata. It
 [MCP Harbor](https://ai.mcpharbor.dev/servers/io.github.louisblythe/cockatoo) has a public Cockatoo listing imported from the official registry. This is **not counted as a separate manual submission**. Its displayed 13-tool snapshot may lag the current endpoint; Agenstry observed 20 during its submission check. Existing readiness notes above describe historical tests, not current tool count.
 
 Audit scope: the submission log was reconciled with current GitHub PR states and new browser receipts. Every old web-form listing was not individually rechecked for publication. Counts represent submission destinations, not approved/live listings. No payments, broad private-repository grants, or production website changes were made.
+
+### Continued free-directory audit
+
+[mcpi](https://mcpi.app/servers/cockatoo) already has a public Cockatoo listing with OAuth and 20 tools, found using its search UI. This is automatic registry import, not a new manual submission. Claiming ownership would require a DNS TXT record or an HTTP verification file; publication already exists, so no duplicate was created.
+
+Developers Digest's current official submit page still points to `developersdigest/dd-mcp-directory`, which returns 404. No accepted intake found. MCP Find's current rules explicitly reject closed-source distributions; no misleading package or open-source claim was submitted.
+
+Outstanding user sign-in handoff: Claude Rules, DReview, MCP Hunter, Stork, MCP Bundles. Further terms or permission prompts must be inspected during each sign-in flow. LobeHub's previously rejected broad private-repository access remains unapproved. AllMCPs terms were approved for this submission and the free submission succeeded.
