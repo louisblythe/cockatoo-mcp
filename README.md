@@ -22,6 +22,18 @@ Transport: **Streamable HTTP**. Add the endpoint in an MCP client that supports 
 
 This is a generic connection example; use your client's documented remote MCP configuration. OAuth discovery: `https://app.cockatoo.com.au/.well-known/oauth-protected-resource/mcp`.
 
+## Gemini CLI extension
+
+Install this connection configuration using Gemini CLI:
+
+```sh
+gemini extensions install https://github.com/louisblythe/cockatoo-mcp
+```
+
+The root `gemini-extension.json` connects directly to the hosted Streamable HTTP endpoint. It contains no local executable, hooks, skills, credentials or trust override. Existing-site access requires owner-approved OAuth; public catalogue/onboarding tools work before sign-in. Use Gemini CLI's `/mcp auth cockatoo` when authentication is needed, and approve only the permissions you intend to grant.
+
+The manifest follows the official extension and MCP configuration references. Public protocol discovery is verified by `npm run verify`; a fresh interactive Gemini CLI installation/OAuth acceptance run has not been performed. Gallery discovery and approval are separate from publishing this configuration.
+
 ## Build a website
 
 1. Call `catalog` for templates, industries, styles and `exampleDocument`.

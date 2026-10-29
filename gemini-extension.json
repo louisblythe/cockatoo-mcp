@@ -1,0 +1,10 @@
+{
+  "name": "cockatoo",
+  "version": "1.0.0",
+  "description": "Create, edit and publish hosted business websites with owner-approved access.",
+  "mcpServers": {
+    "cockatoo": {
+      "httpUrl": "https://app.cockatoo.com.au/mcp"
+    }
+  }
+}
