@@ -1,6 +1,6 @@
 # Cockatoo MCP directory submissions
 
-Status audited 30 October 2026. **32 destinations reached: 31 accepted submissions/review requests plus 1 Gemini gallery-discovery opt-in.** The original baseline was 18; 14 more destinations were reached on 30 October. Gallery indexing is not yet confirmed. **No paid placements purchased.** A submission receipt is not an approved public listing.
+Status audited 30 October 2026. **33 destinations reached: 32 accepted submissions/review requests plus 1 Gemini gallery-discovery opt-in.** The original baseline was 18; 15 more destinations were reached on 30 October. Gallery indexing is not yet confirmed. **No paid placements purchased.** A submission receipt is not an approved public listing.
 
 ## Submitted
 
@@ -41,6 +41,7 @@ Status audited 30 October 2026. **32 destinations reached: 31 accepted submissio
 | [Raycast MCP Registry](https://github.com/raycast/extensions/pull/32948) | PR submitted 30 October. Direct HTTP plus existing mcp-remote fallback convention; metadata, README row and changelog. 6 existing tests, build, generated-definition typecheck, lint and formatting passed. Fresh interactive Raycast OAuth run not performed. |
 | [Grok Build marketplace](https://github.com/xai-org/plugin-marketplace/pull/1763) | PR submitted 30 October. Metadata-only local package, direct HTTP config, README and MIT package license. Catalog validation and full regenerated-index check passed. Hosted implementation remains proprietary; fresh Grok-specific OAuth run not performed. |
 | [Gemini CLI gallery discovery](https://github.com/louisblythe/cockatoo-mcp/blob/main/gemini-extension.json) | Root manifest published and `gemini-cli-extension` topic added 30 October, per the gallery's documented daily crawl route. This is an explicit gallery-discovery opt-in, **not a submission receipt or confirmed gallery inclusion**. Protocol verifier passed with 20 tools; no fresh interactive Gemini install/OAuth acceptance claimed. |
+| [Meta AI Connectors](https://dev.meta.ai/products/connectors) | Free Developer Preview application submitted 30 October. Receipt: “Thank you for your submission. Stay tuned for more information coming soon.” Owner-supplied role entered as Other → Owner; team size mapped from 2–5 to the available 2–10 range. Marketing unchecked. This is a preview application, not connector approval/publication. |
 
 ## Blocked, waiting, or unsuitable
 
@@ -49,7 +50,6 @@ Status audited 30 October 2026. **32 destinations reached: 31 accepted submissio
 | Cline Marketplace | Required attestation that Cline setup has been tested, plus a 400×400 PNG. No fresh Cline acceptance available; not submitted. |
 | ProMCP | Explicitly requires public implementation source; connection-docs-only repository does not fit. |
 | Plug and Ship | Open-source-only submission requirement; hosted implementation is private. |
-| [Meta AI Connectors](https://dev.meta.ai/products/connectors) | Application prepared. Owner supplied role “Owner” and team size “2–5 people”; submission pending because the browser connection could not read the preserved form. No sign-in gate observed. No marketing opt-in selected; not counted as submitted. |
 | [Claude Rules](https://clauderules.net/submit/mcp) | Free community option opens sign-in gate; GitHub or Google. Not submitted. |
 | [DReview](https://dreview.co/login) | Email/password sign-in or account creation required. Not submitted. |
 | [MCP Hunter](https://mcp-hunter.com/submit) | GitHub or Google sign-in required; free weekly spots subject to availability. Not submitted; newsletter left unchecked. |
@@ -106,7 +106,7 @@ Outstanding user sign-in handoff: Claude Rules, DReview, MCP Hunter, Stork, MCP 
 - Raycast contribution is review pending, not a live catalog claim. Its existing dependency audit reported 3 vulnerabilities during install; no unrelated dependency updates were made.
 - Grok package includes only connection metadata/configuration, no local code execution or embedded tokens. The complete catalog was regenerated and checked without unrelated index changes.
 - Gemini's [official release documentation](https://geminicli.com/docs/extensions/releasing/) specifies a public root manifest and `gemini-cli-extension` topic for daily discovery. Both were verified on GitHub; gallery crawl/acceptance remains unconfirmed.
-- Meta preview application additionally asks for owner role and team size. Factual product and REST/MCP details were prepared using the live OpenAPI document and endpoint verification; no unsupported staffing answer was invented.
+- Meta preview application accepted after the owner supplied role and team size. Factual product and REST/MCP details were supplied; Meta-specific acceptance testing was explicitly described as incomplete.
 
 ### Publisher portal audit
 
@@ -115,4 +115,4 @@ Outstanding user sign-in handoff: Claude Rules, DReview, MCP Hunter, Stork, MCP 
 - OpenAI publication is being handled in a separate existing publisher workflow. Identity/domain verification, reviewer access and demo materials remain part of that workflow; no duplicate submission created here.
 - Raycast submission checks passed; external review remained in progress at the last check. Grok Socket checks passed; Semgrep remained in progress. These do not establish marketplace publication.
 - Microsoft certification requires verified partner onboarding and certification artifacts. AWS Marketplace requires seller/product and commercial onboarding. Neither is a simple free directory intake; no agreements or financial onboarding entered.
-- Meta role/team answers are now supplied by the owner. Optional timing remains “Not sure yet”. Browser access failed before those answers could be entered or a receipt verified; Meta remains pending and outside the count.
+- Meta browser access recovered in a fresh tab; application submitted and confirmation verified. Timing was “Not sure yet”; marketing unchecked. Meta is now included as an accepted preview application, not approved integration.
