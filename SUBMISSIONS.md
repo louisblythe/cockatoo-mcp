@@ -49,7 +49,7 @@ Status audited 30 October 2026. **32 destinations reached: 31 accepted submissio
 | Cline Marketplace | Required attestation that Cline setup has been tested, plus a 400×400 PNG. No fresh Cline acceptance available; not submitted. |
 | ProMCP | Explicitly requires public implementation source; connection-docs-only repository does not fit. |
 | Plug and Ship | Open-source-only submission requirement; hosted implementation is private. |
-| [Meta AI Connectors](https://dev.meta.ai/products/connectors) | Application prepared; owner role and team size are required and awaiting user input. No sign-in gate observed. No marketing opt-in selected, and not submitted. |
+| [Meta AI Connectors](https://dev.meta.ai/products/connectors) | Application prepared. Owner supplied role “Owner” and team size “2–5 people”; submission pending because the browser connection could not read the preserved form. No sign-in gate observed. No marketing opt-in selected; not counted as submitted. |
 | [Claude Rules](https://clauderules.net/submit/mcp) | Free community option opens sign-in gate; GitHub or Google. Not submitted. |
 | [DReview](https://dreview.co/login) | Email/password sign-in or account creation required. Not submitted. |
 | [MCP Hunter](https://mcp-hunter.com/submit) | GitHub or Google sign-in required; free weekly spots subject to availability. Not submitted; newsletter left unchecked. |
@@ -58,8 +58,8 @@ Status audited 30 October 2026. **32 destinations reached: 31 accepted submissio
 | [MCP Find](https://mcpfind.org/submit) | Current contribution rules require public implementation source and published npm/PyPI/Docker package; private hosted service does not fit. |
 | Tulimoa | Free listing requires a persistent badge on the product site; not added in this pass. |
 | LobeHub | Account created and publishing CLI authenticated. GitHub ownership connection requests public/private repository access, workflow updates, read/write gists, and read-only profile/email/organisation data. Awaiting explicit owner approval of these broader permissions. Manifest is prepared in `lhm.plugin.json`. |
-| Smithery | Free endpoint registration reached connection settings, then HTTP 403: “Updating servers has been removed. Contact support@smithery.ai.” No confirmed listing. |
-| MCP Atlas | Submission action goes to a missing Formspree form (`xformid`). No submission accepted. |
+| Smithery | Current `/new` route redirects to WorkOS sign-in. Earlier free endpoint registration reached connection settings, then HTTP 403: “Updating servers has been removed. Contact support@smithery.ai.” No confirmed listing. |
+| MCP Atlas | Rechecked 30 October: submission action goes to a missing Formspree form (`xformid`). No submission accepted. |
 | Developers Digest | No working intake found; advertised repository returned 404. |
 | PulseMCP | Direct submission reported paused by SubmitMCP guide; official registry publication completed, downstream import unconfirmed. |
 | punkpeye/awesome-mcp-servers | Local-installable server list; this repository is connection documentation, not the hosted implementation. Use the remote list instead. |
@@ -98,7 +98,7 @@ Audit scope: the submission log was reconciled with current GitHub PR states and
 
 Developers Digest's current official submit page still points to `developersdigest/dd-mcp-directory`, which returns 404. No accepted intake found. MCP Find's current rules explicitly reject closed-source distributions; no misleading package or open-source claim was submitted.
 
-Outstanding user sign-in handoff: Claude Rules, DReview, MCP Hunter, Stork, MCP Bundles. Further terms or permission prompts must be inspected during each sign-in flow. LobeHub's previously rejected broad private-repository access remains unapproved. AllMCPs terms were approved for this submission and the free submission succeeded.
+Outstanding user sign-in handoff: Claude Rules, DReview, MCP Hunter, Stork, MCP Bundles, Smithery, the official Claude directory and official Cursor marketplace. Further terms or permission prompts must be inspected during each sign-in flow. LobeHub's previously rejected broad private-repository access remains unapproved. AllMCPs terms were approved for this submission and the free submission succeeded.
 
 ### Further free-route verification
 
@@ -107,3 +107,12 @@ Outstanding user sign-in handoff: Claude Rules, DReview, MCP Hunter, Stork, MCP 
 - Grok package includes only connection metadata/configuration, no local code execution or embedded tokens. The complete catalog was regenerated and checked without unrelated index changes.
 - Gemini's [official release documentation](https://geminicli.com/docs/extensions/releasing/) specifies a public root manifest and `gemini-cli-extension` topic for daily discovery. Both were verified on GitHub; gallery crawl/acceptance remains unconfirmed.
 - Meta preview application additionally asks for owner role and team size. Factual product and REST/MCP details were prepared using the live OpenAPI document and endpoint verification; no unsupported staffing answer was invented.
+
+### Publisher portal audit
+
+- [Claude official directory](https://claude.ai/directory/manage/new) redirects to sign-in (Google, Apple or email). Separate from Claude Rules; no application submitted.
+- [Official Cursor marketplace](https://cursor.com/marketplace/publish) requires sign-in to apply and has separate [publisher terms](https://cursor.com/marketplace-publisher-terms). Separate from the community Cursor Directory submission; no terms accepted or application submitted here.
+- OpenAI publication is being handled in a separate existing publisher workflow. Identity/domain verification, reviewer access and demo materials remain part of that workflow; no duplicate submission created here.
+- Raycast submission checks passed; external review remained in progress at the last check. Grok Socket checks passed; Semgrep remained in progress. These do not establish marketplace publication.
+- Microsoft certification requires verified partner onboarding and certification artifacts. AWS Marketplace requires seller/product and commercial onboarding. Neither is a simple free directory intake; no agreements or financial onboarding entered.
+- Meta role/team answers are now supplied by the owner. Optional timing remains “Not sure yet”. Browser access failed before those answers could be entered or a receipt verified; Meta remains pending and outside the count.
