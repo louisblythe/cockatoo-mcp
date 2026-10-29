@@ -1,6 +1,6 @@
 # Cockatoo MCP directory submissions
 
-Status audited 30 October 2026. **28 distinct submission destinations: 18 previously recorded plus 10 accepted submissions/review requests on 30 October.** **No paid placements purchased.** A submission receipt is not an approved public listing.
+Status audited 30 October 2026. **32 destinations reached: 31 accepted submissions/review requests plus 1 Gemini gallery-discovery opt-in.** The original baseline was 18; 14 more destinations were reached on 30 October. Gallery indexing is not yet confirmed. **No paid placements purchased.** A submission receipt is not an approved public listing.
 
 ## Submitted
 
@@ -34,7 +34,13 @@ Status audited 30 October 2026. **28 distinct submission destinations: 18 previo
 
 | [AllMCPs](https://allmcps.com/mcp/cockatoo) | Submitted 30 October after explicit owner approval of terms. Receipt: “Cockatoo is in the review queue.” No paid upgrades selected; newsletter unchecked. Public publication remains pending. |
 | [GitHub MCP Registry onboarding](https://github.com/github/github-mcp-server/discussions/3623) | Manual onboarding request submitted 30 October. Official registry active/latest checked; GitHub search returned zero listings before request. Private hosted implementation and MIT metadata-only license explicitly disclosed. |
-| [punkpeye awesome-remote-mcp-servers](https://github.com/punkpeye/awesome-remote-mcp-servers/pull/3341) | PR submitted 30 October after Glama connector became available. Required badge resolves; three-line entry in Content Management. Maintainer CI/review pending. |
+| [punkpeye awesome-remote-mcp-servers](https://github.com/punkpeye/awesome-remote-mcp-servers/pull/3341) | PR submitted 30 October after Glama connector became available. Required badge resolves; three-line entry in Content Management. Submission CI passed; maintainer review pending. |
+
+
+| [Figma connector partner interest](https://form.asana.com/?d=10497086658021&k=34zEs7g-ootZdNmVYtSiaQ) | Submitted 30 October; receipt: “Thanks for submitting a request” and confirmation to support@cockatoo.com.au. This is partner interest, not approved integration/publication. No fresh Figma acceptance claimed. |
+| [Raycast MCP Registry](https://github.com/raycast/extensions/pull/32948) | PR submitted 30 October. Direct HTTP plus existing mcp-remote fallback convention; metadata, README row and changelog. 6 existing tests, build, generated-definition typecheck, lint and formatting passed. Fresh interactive Raycast OAuth run not performed. |
+| [Grok Build marketplace](https://github.com/xai-org/plugin-marketplace/pull/1763) | PR submitted 30 October. Metadata-only local package, direct HTTP config, README and MIT package license. Catalog validation and full regenerated-index check passed. Hosted implementation remains proprietary; fresh Grok-specific OAuth run not performed. |
+| [Gemini CLI gallery discovery](https://github.com/louisblythe/cockatoo-mcp/blob/main/gemini-extension.json) | Root manifest published and `gemini-cli-extension` topic added 30 October, per the gallery's documented daily crawl route. This is an explicit gallery-discovery opt-in, **not a submission receipt or confirmed gallery inclusion**. Protocol verifier passed with 20 tools; no fresh interactive Gemini install/OAuth acceptance claimed. |
 
 ## Blocked, waiting, or unsuitable
 
@@ -43,6 +49,7 @@ Status audited 30 October 2026. **28 distinct submission destinations: 18 previo
 | Cline Marketplace | Required attestation that Cline setup has been tested, plus a 400×400 PNG. No fresh Cline acceptance available; not submitted. |
 | ProMCP | Explicitly requires public implementation source; connection-docs-only repository does not fit. |
 | Plug and Ship | Open-source-only submission requirement; hosted implementation is private. |
+| [Meta AI Connectors](https://dev.meta.ai/products/connectors) | Application prepared; owner role and team size are required and awaiting user input. No sign-in gate observed. No marketing opt-in selected, and not submitted. |
 | [Claude Rules](https://clauderules.net/submit/mcp) | Free community option opens sign-in gate; GitHub or Google. Not submitted. |
 | [DReview](https://dreview.co/login) | Email/password sign-in or account creation required. Not submitted. |
 | [MCP Hunter](https://mcp-hunter.com/submit) | GitHub or Google sign-in required; free weekly spots subject to availability. Not submitted; newsletter left unchecked. |
@@ -92,3 +99,11 @@ Audit scope: the submission log was reconciled with current GitHub PR states and
 Developers Digest's current official submit page still points to `developersdigest/dd-mcp-directory`, which returns 404. No accepted intake found. MCP Find's current rules explicitly reject closed-source distributions; no misleading package or open-source claim was submitted.
 
 Outstanding user sign-in handoff: Claude Rules, DReview, MCP Hunter, Stork, MCP Bundles. Further terms or permission prompts must be inspected during each sign-in flow. LobeHub's previously rejected broad private-repository access remains unapproved. AllMCPs terms were approved for this submission and the free submission succeeded.
+
+### Further free-route verification
+
+- Figma interest form requires no sign-in and accepted the request. Proposed Figma workflow was clearly described as untested.
+- Raycast contribution is review pending, not a live catalog claim. Its existing dependency audit reported 3 vulnerabilities during install; no unrelated dependency updates were made.
+- Grok package includes only connection metadata/configuration, no local code execution or embedded tokens. The complete catalog was regenerated and checked without unrelated index changes.
+- Gemini's [official release documentation](https://geminicli.com/docs/extensions/releasing/) specifies a public root manifest and `gemini-cli-extension` topic for daily discovery. Both were verified on GitHub; gallery crawl/acceptance remains unconfirmed.
+- Meta preview application additionally asks for owner role and team size. Factual product and REST/MCP details were prepared using the live OpenAPI document and endpoint verification; no unsupported staffing answer was invented.
